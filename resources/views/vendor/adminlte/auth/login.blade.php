@@ -23,6 +23,15 @@
 @section('auth_header', __('adminlte::adminlte.login_message'))
 
 @section('auth_body')
+    @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{ session('error') }}
+        </div>
+    @endif
+
     <form action="{{ $loginUrl }}" method="post">
         @csrf
 

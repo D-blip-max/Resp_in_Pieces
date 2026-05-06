@@ -301,12 +301,49 @@ return [
     'menu' => [
          //configuracion 
         [
-          //  'can'  => 'admin.configuracion.index',
+            'can'  => 'admin.configuracion.index',
             'text' => 'Configuracion',
             'url' => 'admin/configuracion', //fijarse bien en las routes
             'icon' => 'fas fa-fw fa-cog',
             'classes' => 'bg-blue text-white',
         ],
+        [
+            'text' => 'Cambiar Contraseña',
+            'url' => 'admin/password/change',
+            'icon' => 'fas fa-fw fa-key',
+            'classes' => 'bg-yellow text-white',
+        ],
+        [
+            'text' => 'Vitácora',
+            'url' => 'admin/vitacora',
+            'icon' => 'fas fa-fw fa-book',
+            'classes' => 'bg-green text-white',
+        ],
+        //niveles
+        [
+            'can' => 'admin.niveles.index',
+            'text'    => 'Niveles',
+            'url'     => 'admin/niveles',
+            'icon'    => 'fas fa-fw fa-layer-group',
+            'classes' => 'bg-blue text-white',
+        ],
+        //Roles
+        [
+            'can' => 'admin.roles.index',
+            'text'    => 'Roles',
+            'url'     => 'admin/roles',
+            'icon'    => 'fas fa-fw fa-users-cog ',
+            'classes' => 'bg-blue text-white',
+        ],
+        //Estudiantes
+        [
+            'can' => 'admin.estudiantes.index',
+            'text'    => 'Estudiantes',
+            'icon'    => 'fas fa-fw fa-user-graduate',
+            'classes' => 'bg-blue text-white',
+            'url'  => 'admin/estudiantes',
+        ],
+
     ],
 
     /*

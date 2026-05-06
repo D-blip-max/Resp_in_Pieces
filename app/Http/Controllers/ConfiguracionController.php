@@ -72,6 +72,13 @@ class ConfiguracionController extends Controller
 
             $configuracion->save();
 
+            // Registrar en vitácora
+            \App\Models\Vitacora::create([
+                'usuario' => auth()->user()->name,
+                'accion' => 'Se configuró el sistema',
+                'hora' => now(),
+            ]);
+
             return redirect()->route('admin.configuracion.index')
                 ->with('mensaje', 'Configuración actualizada correctamente.')
                 ->with('icono', 'success');
@@ -96,6 +103,13 @@ class ConfiguracionController extends Controller
             }
 
             $configuracion->save();
+
+            // Registrar en vitácora
+            \App\Models\Vitacora::create([
+                'usuario' => auth()->user()->name,
+                'accion' => 'Se configuró el sistema',
+                'hora' => now(),
+            ]);
 
             return redirect()->route('admin.configuracion.index')
                 ->with('mensaje', 'Configuración creada correctamente.')

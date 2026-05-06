@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Rules\ValidPassword;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller
@@ -26,4 +27,19 @@ class ResetPasswordController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
+
+    /**
+     * Get the password reset validation rules.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
+     */
+    protected function rules()
+    {
+        return [
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => ['required', 'confirmed', 'min:8', new ValidPassword()],
+        ];
+    }
 }
+
