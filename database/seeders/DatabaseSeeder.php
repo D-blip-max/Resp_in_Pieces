@@ -30,9 +30,9 @@ class DatabaseSeeder extends Seeder
             'divisa' => 'Bs',
             'correo_electronico' => 'cei@gmail.com',
             'web' => 'https://cei.com',
-            'logo' => 'uploads\logos\1772770542_cei Logo.png'
+            'logo' => 'uploads/logos/1776896008_Logo_cei.jpg'
         ]);
-
+        
         
 
     }

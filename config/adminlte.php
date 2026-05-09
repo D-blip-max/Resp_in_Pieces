@@ -327,6 +327,22 @@ return [
             'icon'    => 'fas fa-fw fa-layer-group',
             'classes' => 'bg-blue text-white',
         ],
+        //Grados
+        [
+            'can' => 'admin.grados.index',
+            'text'    => 'Grados',
+            'url'     => 'admin/grados',
+            'icon'    => 'fas fa-fw fa-list-alt',
+            'classes' => 'bg-blue text-white',
+        ],
+        //Idiomas
+        [
+            'can' => 'admin.idiomas.index',
+            'text'    => 'Idiomas',
+            'url'     => 'admin/idiomas',
+            'icon'    => 'fas fa-fw fa-language',
+            'classes' => 'bg-blue text-white',
+        ],
         //Roles
         [
             'can' => 'admin.roles.index',

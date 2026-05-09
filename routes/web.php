@@ -30,6 +30,15 @@ Route::put('/admin/niveles/{id}', [App\Http\Controllers\NivelController::class, 
 Route::delete('/admin/niveles/{id}', [App\Http\Controllers\NivelController::class, 'destroy'])->name('admin.niveles.destroy')->middleware('auth','can:admin.niveles.destroy');//Delete
 
 
+
+//rutas que van a ser de grados del sitema CreateReadUpdateDelete
+//Trabajando con Modals
+Route::get('/admin/grados', [App\Http\Controllers\GradoController::class, 'index'])->name('admin.grados.index')->middleware('auth','can:admin.grados.index');
+Route::post('/admin/grados/create', [App\Http\Controllers\GradoController::class, 'store'])->name('admin.grados.create')->middleware('auth','can:admin.grados.create');//Create
+Route::put('/admin/grados/{id}', [App\Http\Controllers\GradoController::class, 'update'])->name('admin.grados.update')->middleware('auth','can:admin.grados.update');//Update
+Route::delete('/admin/grados/{id}', [App\Http\Controllers\GradoController::class, 'destroy'])->name('admin.grados.destroy')->middleware('auth','can:admin.grados.destroy');//Delete
+
+
 //rutas que van a ser de Roles del sitema CreateReadUpdateDelete
 //trabajando con vistas
 Route::get('/admin/roles', [App\Http\Controllers\RoleController::class, 'index'])->name('admin.roles.index')->middleware('auth','can:admin.roles.index');
@@ -67,7 +76,20 @@ Route::put('/admin/personal/{id}', [App\Http\Controllers\PersonalController::cla
 Route::delete('/admin/personal/{id}', [App\Http\Controllers\PersonalController::class, 'destroy'])->name('admin.personal.destroy')->middleware('auth','can:admin.personal.destroy');//Delete
 
 
+//rutas que van a ser de niveles del sitema CreateReadUpdateDelete
+//Trabajando con Modals
+Route::get('/admin/niveles', [App\Http\Controllers\NivelController::class, 'index'])->name('admin.niveles.index')->middleware('auth','can:admin.niveles.index');
+Route::post('/admin/niveles/create', [App\Http\Controllers\NivelController::class, 'store'])->name('admin.niveles.create')->middleware('auth','can:admin.niveles.create');//Create
+Route::put('/admin/niveles/{id}', [App\Http\Controllers\NivelController::class, 'update'])->name('admin.niveles.update')->middleware('auth','can:admin.niveles.update');//Update
+Route::delete('/admin/niveles/{id}', [App\Http\Controllers\NivelController::class, 'destroy'])->name('admin.niveles.destroy')->middleware('auth','can:admin.niveles.destroy');//Delete
 
+
+//rutas que van a ser de niveles del sitema CreateReadUpdateDelete
+//Trabajando con Modals
+Route::get('/admin/idiomas', [App\Http\Controllers\IdiomaController::class, 'index'])->name('admin.idiomas.index')->middleware('auth','can:admin.idiomas.index');
+Route::post('/admin/idiomas/create', [App\Http\Controllers\IdiomaController::class, 'store'])->name('admin.idiomas.create')->middleware('auth','can:admin.idiomas.create');//Create
+Route::put('/admin/idiomas/{id}', [App\Http\Controllers\IdiomaController::class, 'update'])->name('admin.idiomas.update')->middleware('auth','can:admin.idiomas.update');//Update
+Route::delete('/admin/idiomas/{id}', [App\Http\Controllers\IdiomaController::class, 'destroy'])->name('admin.idiomas.destroy')->middleware('auth','can:admin.idiomas.destroy');//Delete
 
 
 

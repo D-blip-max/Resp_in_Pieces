@@ -29,6 +29,14 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.niveles.update'])->syncRoles($admin);
         Permission::create(['name' => 'admin.niveles.destroy'])->syncRoles($admin);
 
+        
+        // --- PERMISOS PARA GRADOS CRUD---
+        Permission::create(['name' => 'admin.grados.index'])->syncRoles($admin);
+        Permission::create(['name' => 'admin.grados.create'])->syncRoles($admin);
+        Permission::create(['name' => 'admin.grados.update'])->syncRoles($admin);
+        Permission::create(['name' => 'admin.grados.destroy'])->syncRoles($admin);
+
+
         // --- PERMISOS PARA ROLES CRUD---
         Permission::create(['name' => 'admin.roles.index'])->syncRoles($admin);
         Permission::create(['name' => 'admin.roles.create'])->syncRoles($admin);
@@ -56,6 +64,12 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.personal.edit'])->syncRoles($admin);
         Permission::create(['name' => 'admin.personal.update'])->syncRoles($admin);
         Permission::create(['name' => 'admin.personal.destroy'])->syncRoles($admin);
+
+        // --- PERMISOS PARA IDIOMAS CRUD---
+        Permission::create(['name' => 'admin.idiomas.index'])->syncRoles($admin);
+        Permission::create(['name' => 'admin.idiomas.create'])->syncRoles($admin);
+        Permission::create(['name' => 'admin.idiomas.update'])->syncRoles($admin);
+        Permission::create(['name' => 'admin.idiomas.destroy'])->syncRoles($admin);
 
         
      
