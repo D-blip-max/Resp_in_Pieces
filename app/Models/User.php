@@ -16,7 +16,7 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable implements MustVerifyEmail
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable,HasRoles;
+    use HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -76,7 +76,12 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->notify(new CustomConfirmPassword());
     }
 
-    public function estudiante() {
+    public function estudiante()
+    {
         return $this->HasOne(Estudiante::class);
+    }
+    public function personal()
+    { //relacion 1 a 1
+        return $this->HasOne(Personal::class);
     }
 }

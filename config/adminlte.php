@@ -343,6 +343,26 @@ return [
             'classes' => 'bg-blue text-white',
             'url'  => 'admin/estudiantes',
         ],
+        //Personal Docente o Administrativos
+        [
+            'can' => 'admin.personal.index',
+            'text'    => 'Personal',
+            'url'     => 'admin/personal',
+            'icon'    => 'fas fa-fw fa-briefcase ',
+            'classes' => 'bg-blue text-white',
+            'submenu' => [
+                [
+                    'text' => 'Administrativo',
+                    'url'  => 'admin/personal/administrativo',
+                    'classes' => 'bg-white text-black',
+                ],
+                [
+                    'text' => 'Docente',
+                    'url'  => 'admin/personal/docente',
+                    'classes' => 'bg-white text-black',
+                ],
+            ],
+        ],
 
     ],
 

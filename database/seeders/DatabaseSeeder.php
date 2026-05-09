@@ -21,9 +21,7 @@ class DatabaseSeeder extends Seeder
         
         $this->call(RoleSeeder::class);
         $this->call(NivelSeeder::class);
-
-       
-    
+  
         Configuracion::create([
             'nombre' => 'Cei',
             'descripcion' => 'Curso de Extension de Idiomas',
@@ -34,5 +32,8 @@ class DatabaseSeeder extends Seeder
             'web' => 'https://cei.com',
             'logo' => 'uploads\logos\1772770542_cei Logo.png'
         ]);
+
+        
+
     }
 }

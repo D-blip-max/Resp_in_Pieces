@@ -19,17 +19,17 @@ class RoleSeeder extends Seeder
         $docente = Role::create(['name' => 'DOCENTE']);
         $estudiante = Role::create(['name' => 'ESTUDIANTE']);
 
-         // --- PERMISOS PARA LA CONFIGURACIÓN DEL SISTEMA ---
+         // --- PERMISOS PARA LA CONFIGURACIÓN DEL SISTEMA CRUD---
         Permission::create(['name' => 'admin.configuracion.index'])->syncRoles($admin);
         Permission::create(['name' => 'admin.configuracion.crear'])->syncRoles($admin);
 
-         // --- PERMISOS PARA NIVELES ---
+         // --- PERMISOS PARA NIVELES CRUD---
         Permission::create(['name' => 'admin.niveles.index'])->syncRoles($admin);
         Permission::create(['name' => 'admin.niveles.create'])->syncRoles($admin);
         Permission::create(['name' => 'admin.niveles.update'])->syncRoles($admin);
         Permission::create(['name' => 'admin.niveles.destroy'])->syncRoles($admin);
 
-        // --- PERMISOS PARA ROLES ---
+        // --- PERMISOS PARA ROLES CRUD---
         Permission::create(['name' => 'admin.roles.index'])->syncRoles($admin);
         Permission::create(['name' => 'admin.roles.create'])->syncRoles($admin);
         Permission::create(['name' => 'admin.roles.store'])->syncRoles($admin);
@@ -39,7 +39,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.roles.permisos'])->syncRoles($admin);
         Permission::create(['name' => 'admin.roles.update_permisos'])->syncRoles($admin);
 
-          // --- PERMISOS PARA ESTUDIANTES ---
+          // --- PERMISOS PARA ESTUDIANTES CRUD---
         Permission::create(['name' => 'admin.estudiantes.index'])->syncRoles($admin);
         Permission::create(['name' => 'admin.estudiantes.create'])->syncRoles($admin);
         Permission::create(['name' => 'admin.estudiantes.store'])->syncRoles($admin);
@@ -48,6 +48,16 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.estudiantes.update'])->syncRoles($admin);
         Permission::create(['name' => 'admin.estudiantes.destroy'])->syncRoles($admin);
 
+          // --- PERMISOS PARA PERSONAL CRUD---
+        Permission::create(['name' => 'admin.personal.index'])->syncRoles($admin);
+        Permission::create(['name' => 'admin.personal.create'])->syncRoles($admin);
+        Permission::create(['name' => 'admin.personal.store'])->syncRoles($admin);
+        Permission::create(['name' => 'admin.personal.show'])->syncRoles($admin);
+        Permission::create(['name' => 'admin.personal.edit'])->syncRoles($admin);
+        Permission::create(['name' => 'admin.personal.update'])->syncRoles($admin);
+        Permission::create(['name' => 'admin.personal.destroy'])->syncRoles($admin);
+
         
+     
     }
 }
