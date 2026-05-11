@@ -303,7 +303,7 @@ return [
         // PAQUETE 1: Seguridad y Acceso
         // =============================================
         [
-            'text'    => 'Seguridad y Acceso',
+            'text'    => 'Paquete 1: Seguridad y Acceso',
             'icon'    => 'fas fa-fw fa-shield-alt',
             'classes' => 'bg-dark text-white',
             'submenu' => [
@@ -315,11 +315,10 @@ return [
                     'classes' => 'bg-blue text-white',
                 ],
                 [
-                    'can'     => 'admin.password.change',
                     'text'    => 'CU4 · Cambiar Contraseña',
                     'url'     => 'admin/password/change',
                     'icon'    => 'fas fa-fw fa-key',
-                    'classes' => 'bg-yellow text-white',
+                    'classes' => 'bg-blue text-white',
                 ],
                 [
                     'can'     => 'admin.roles.index',
@@ -335,16 +334,15 @@ return [
         // PAQUETE 2: Gestión de Personal y Usuarios
         // =============================================
         [
-            'text'    => 'Gestión de Personal y Usuarios',
+            'text'    => 'Paquete 2: Gestión de Personal y Usuarios',
             'icon'    => 'fas fa-fw fa-users',
             'classes' => 'bg-dark text-white',
             'submenu' => [
                 [
-                    'can'     => 'admin.vitacora.index',
                     'text'    => 'CU6 · Visualizar Bitácora',
                     'url'     => 'admin/vitacora',
                     'icon'    => 'fas fa-fw fa-book',
-                    'classes' => 'bg-green text-white',
+                    'classes' => 'bg-blue text-white',
                 ],
                 [
                     'can'     => 'admin.estudiantes.index',
@@ -379,7 +377,7 @@ return [
         // PAQUETE 3: Configuración Académica
         // =============================================
         [
-            'text'    => 'Configuración Académica',
+            'text'    => 'Paquete 3: Configuración Académica',
             'icon'    => 'fas fa-fw fa-graduation-cap',
             'classes' => 'bg-dark text-white',
             'submenu' => [
