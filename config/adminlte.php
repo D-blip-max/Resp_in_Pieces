@@ -297,9 +297,127 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Menu-Configuration
     |
     */
-
     'menu' => [
-         //configuracion 
+
+        // =============================================
+        // PAQUETE 1: Seguridad y Acceso
+        // =============================================
+        [
+            'text'    => 'Seguridad y Acceso',
+            'icon'    => 'fas fa-fw fa-shield-alt',
+            'classes' => 'bg-dark text-white',
+            'submenu' => [
+                [
+                    'can'     => 'admin.configuracion.index',
+                    'text'    => 'Configuración',
+                    'url'     => 'admin/configuracion',
+                    'icon'    => 'fas fa-fw fa-cog',
+                    'classes' => 'bg-blue text-white',
+                ],
+                [
+                    'can'     => 'admin.password.change',
+                    'text'    => 'CU4 · Cambiar Contraseña',
+                    'url'     => 'admin/password/change',
+                    'icon'    => 'fas fa-fw fa-key',
+                    'classes' => 'bg-yellow text-white',
+                ],
+                [
+                    'can'     => 'admin.roles.index',
+                    'text'    => 'CU5 · Gestionar Roles y Permisos',
+                    'url'     => 'admin/roles',
+                    'icon'    => 'fas fa-fw fa-users-cog',
+                    'classes' => 'bg-blue text-white',
+                ],
+            ],
+        ],
+
+        // =============================================
+        // PAQUETE 2: Gestión de Personal y Usuarios
+        // =============================================
+        [
+            'text'    => 'Gestión de Personal y Usuarios',
+            'icon'    => 'fas fa-fw fa-users',
+            'classes' => 'bg-dark text-white',
+            'submenu' => [
+                [
+                    'can'     => 'admin.vitacora.index',
+                    'text'    => 'CU6 · Visualizar Bitácora',
+                    'url'     => 'admin/vitacora',
+                    'icon'    => 'fas fa-fw fa-book',
+                    'classes' => 'bg-green text-white',
+                ],
+                [
+                    'can'     => 'admin.estudiantes.index',
+                    'text'    => 'CU7 · Gestionar Estudiante',
+                    'url'     => 'admin/estudiantes',
+                    'icon'    => 'fas fa-fw fa-user-graduate',
+                    'classes' => 'bg-blue text-white',
+                ],
+                [
+                    'can'     => 'admin.personal.index',
+                    'text'    => 'CU14 · Gestionar Personal',
+                    'url'     => 'admin/personal',
+                    'icon'    => 'fas fa-fw fa-briefcase',
+                    'classes' => 'bg-blue text-white',
+                    'submenu' => [
+                        [
+                            'text'    => 'Administrativo',
+                            'url'     => 'admin/personal/administrativo',
+                            'classes' => 'bg-white text-black',
+                        ],
+                        [
+                            'text'    => 'Docente',
+                            'url'     => 'admin/personal/docente',
+                            'classes' => 'bg-white text-black',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+        // =============================================
+        // PAQUETE 3: Configuración Académica
+        // =============================================
+        [
+            'text'    => 'Configuración Académica',
+            'icon'    => 'fas fa-fw fa-graduation-cap',
+            'classes' => 'bg-dark text-white',
+            'submenu' => [
+                [
+                    'can'     => 'admin.idiomas.index',
+                    'text'    => 'CU10 · Gestionar Idioma',
+                    'url'     => 'admin/idiomas',
+                    'icon'    => 'fas fa-fw fa-language',
+                    'classes' => 'bg-blue text-white',
+                ],
+                [
+                    'can'     => 'admin.niveles.index',
+                    'text'    => 'CU11 · Gestionar Niveles',
+                    'url'     => 'admin/niveles',
+                    'icon'    => 'fas fa-fw fa-layer-group',
+                    'classes' => 'bg-blue text-white',
+                ],
+                [
+                    'can'     => 'admin.grados.index',
+                    'text'    => 'CU20 · Gestionar Grados',
+                    'url'     => 'admin/grados',
+                    'icon'    => 'fas fa-fw fa-list-alt',
+                    'classes' => 'bg-blue text-white',
+                ],
+                [
+                    'can'     => 'admin.turnos.index',
+                    'text'    => 'CU21 · Gestionar Turnos',
+                    'url'     => 'admin/turnos',
+                    'icon'    => 'fas fa-fw fa-clock',
+                    'classes' => 'bg-blue text-white',
+                ],
+            ],
+        ],
+
+    ],
+    /*
+    'menu' => [
+        //configuracion 
         [
             'can'  => 'admin.configuracion.index',
             'text' => 'Configuracion',
@@ -307,14 +425,16 @@ return [
             'icon' => 'fas fa-fw fa-cog',
             'classes' => 'bg-blue text-white',
         ],
+        //Cambiar Contraseña
         [
             'text' => 'Cambiar Contraseña',
             'url' => 'admin/password/change',
             'icon' => 'fas fa-fw fa-key',
             'classes' => 'bg-yellow text-white',
         ],
+        //Bitacora
         [
-            'text' => 'Vitácora',
+            'text' => 'Bitácora',
             'url' => 'admin/vitacora',
             'icon' => 'fas fa-fw fa-book',
             'classes' => 'bg-green text-white',
@@ -344,7 +464,7 @@ return [
             'classes' => 'bg-blue text-white',
         ],
         //Turnos
-        [        
+        [
             'can' => 'admin.turnos.index',
             'text'    => 'Turnos',
             'url'     => 'admin/turnos',
@@ -370,7 +490,7 @@ return [
         //Personal Docente o Administrativos
         [
             'can' => 'admin.personal.index',
-            'text'    => 'Personal',
+            'text'    => 'Gestionar Personal',
             'url'     => 'admin/personal',
             'icon'    => 'fas fa-fw fa-briefcase ',
             'classes' => 'bg-blue text-white',
@@ -387,9 +507,10 @@ return [
                 ],
             ],
         ],
+        
 
     ],
-
+*/
     /*
     |--------------------------------------------------------------------------
     | Menu Filters
@@ -470,7 +591,7 @@ return [
                 ],
             ],
         ],
-       'Sweetalert2' => [
+        'Sweetalert2' => [
             'active' => true,
             'files' => [
                 [

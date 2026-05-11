@@ -99,8 +99,9 @@ class EstudianteController extends Controller
      */
     public function edit($id)
     {
-        $roles = Role::all();
         $estudiante = Estudiante::with('usuario')->find($id);
+        
+        $roles = Role::all();
 
         return view('admin.estudiantes.edit', compact('estudiante', 'roles'));
     }
@@ -155,7 +156,7 @@ class EstudianteController extends Controller
             $estudiante->foto = 'uploads/fotos/estudiantes/' . $nombreArchivo;
         }
 
-        $estudiante->save();
+        $estudiante->save();//UPDATE
 
          Vitacora::create([
             'usuario' => auth()->user()->name,
