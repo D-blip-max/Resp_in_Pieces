@@ -6,6 +6,7 @@ use App\Models\Grado;
 use Illuminate\Http\Request;
 use App\Models\Nivel;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Vitacora;
 
 class GradoController extends Controller
 {
@@ -45,6 +46,12 @@ class GradoController extends Controller
         $grado->nombre = $request->nombre_create;
         $grado->nivel_id = $request->nivel_id_create;
         $grado->save();
+
+        Vitacora::create([
+            'usuario' => auth()->user()->name,
+            'accion' => 'Creó el Grado: ' . $grado->nombre,
+            'hora' => now(),
+        ]);
 
         return redirect()->route('admin.grados.index')
             ->with('mensaje', 'El grado se ha creado correctamente')
@@ -90,6 +97,11 @@ class GradoController extends Controller
         $grado->nivel_id = $request->nivel_id;
         $grado->save();
 
+        Vitacora::create([
+            'usuario' => auth()->user()->name,
+            'accion' => 'Actualizó el Grado a: ' . $grado->nombre,
+            'hora' => now(),
+        ]);
         return redirect()->route('admin.grados.index')
             ->with('mensaje', 'El grado se ha actualizado correctamente')
             ->with('icono', 'success');     
@@ -104,6 +116,11 @@ class GradoController extends Controller
     
         $grado = Grado::find($id);
         $grado->delete();
+        Vitacora::create([
+            'usuario' => auth()->user()->name,
+            'accion' => 'Eliminó el Grado: ' . $grado->nombre,
+            'hora' => now(),
+        ]);
         return redirect()->route('admin.grados.index')
             ->with('mensaje', 'El grado se ha eliminado correctamente')
             ->with('icono', 'success');

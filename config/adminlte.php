@@ -343,6 +343,14 @@ return [
             'icon'    => 'fas fa-fw fa-language',
             'classes' => 'bg-blue text-white',
         ],
+        //Turnos
+        [        
+            'can' => 'admin.turnos.index',
+            'text'    => 'Turnos',
+            'url'     => 'admin/turnos',
+            'icon'    => 'fas fa-fw fa-clock',
+            'classes' => 'bg-blue text-white',
+        ],
         //Roles
         [
             'can' => 'admin.roles.index',
